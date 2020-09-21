@@ -3,7 +3,7 @@ this is an attempt to make the needed permissions/roles to set up Kubermatic on 
 ## what is there:
 
 - roles are defined in [./roles.tf](./roles.tf)
-- an example folder structure is created in [./folders.ts](./folders.ts)
+- an example folder structure is created in [./folders.tf](./folders.tf)
 - an example script using govc to set up vSphere users and groups is in [./scripts/create-user-and-group.sh](./scripts/create-user-and-group.sh)
 
 ## what is missing:
