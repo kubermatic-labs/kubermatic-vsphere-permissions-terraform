@@ -292,7 +292,7 @@ resource vsphere_role k8c_user_folder_propagate {
     "VirtualMachine.Config.Settings",
     "VirtualMachine.Config.SwapPlacement",
     "VirtualMachine.Config.ToggleForkParent",
-    "VirtualMachine.Config.Unlock",
+    #"VirtualMachine.Config.Unlock",
     "VirtualMachine.Config.UpgradeVirtualHardware",
     "VirtualMachine.GuestOperations.Execute",
     "VirtualMachine.GuestOperations.Modify",
