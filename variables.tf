@@ -9,6 +9,10 @@ variable "datastore_name" {
 }
 
 variable "parent_folder" {
-  default = "joshys-playground"
+  default = "parent-folder"
+}
+
+variable "role_prefix" {
+  default = "kkp-example"
 }
 
