@@ -38,9 +38,23 @@ resource vsphere_role k8c_ccm_storage_datastore_propagate {
     "Datastore.FileManagement",
   ]
 }
+
+##### Role `k8c-ccm-storage-cns`
+#* Granted at **vcenter** level, not propagated
+#* Permissions
+#  * CNS
+#    * Searchable
+resource vsphere_role k8c_ccm_storage_cns {
+  name = "${var.role_prefix}_k8c-ccm-storage-cns"
+  role_privileges = [
+    "Cns.Searchable",
+  ]
+}
+
 ### ##### Role `Read-only` (predefined)
 #* Granted at ..., **not** propagated
 #  * Datacenter
+#  * All hosts where the nodes VMs reside.
 ### Rights
 #System.Anonymous
 #System.Read
@@ -357,6 +371,7 @@ output vsphere_roles {
   value = {
     k8c_ccm_storage_vmfolder_propagate = vsphere_role.k8c_ccm_storage_vmfolder_propagate.name,
     k8c_ccm_storage_datastore_propagate = vsphere_role.k8c_ccm_storage_datastore_propagate.name,
+    k8c_ccm_storage_cns = vsphere_role.k8c_ccm_storage_cns.name,
     k8c_read_only = data.vsphere_role.read_only
     k8c_user_vcenter = vsphere_role.k8c_user_vcenter.name,
     k8c_user_datacenter = vsphere_role.k8c_user_datacenter.name,
